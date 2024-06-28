@@ -19,7 +19,7 @@ tar_gz_dist = requests.get(source_url)
 sha256_hash = sha256(tar_gz_dist.content).hexdigest()
 
 # Read the main.yml file line by line
-meta_yml_path = Path.cwd() / "recipe" / "meta.yaml"
+meta_yml_path = Path.cwd() / "meta.yaml"
 with open(meta_yml_path, 'r') as mfile:
     mfile_txt = mfile.read()
 
