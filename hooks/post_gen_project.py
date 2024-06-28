@@ -1,8 +1,8 @@
+import warnings
 from hashlib import sha256
 from pathlib import Path
 
 import requests
-import warnings
 
 # Generate the SHA256 hash from the distribution source
 source_url = ""
