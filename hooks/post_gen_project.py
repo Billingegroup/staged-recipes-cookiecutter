@@ -1,7 +1,7 @@
-import requests
 from hashlib import sha256
 from pathlib import Path
 
+import requests
 
 # Generate the SHA256 hash from the distribution source
 source_url = ""
@@ -22,7 +22,7 @@ sha256_hash = sha256(tar_gz_dist.content).hexdigest()
 meta_yml_path = Path.cwd() / "recipe" / "meta.yaml"
 with open(meta_yml_path, 'r') as mfile:
     mfile_txt = mfile.read()
-    
+
     # Add the SHA256
     mfile_txt = mfile_txt.replace("GENERATE_SHA", f"{sha256_hash}")
 
@@ -63,4 +63,3 @@ with open(meta_yml_path, 'r') as mfile:
 
 with open(meta_yml_path, 'w') as mfile:
     mfile.write(mfile_txt)
-
