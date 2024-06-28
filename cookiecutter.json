@@ -1,0 +1,19 @@
+{
+    "github_org": "diffpy",
+    "module_name": "diffpy.my_project",
+    "repo_name": "{{ cookiecutter.module_name }}",
+    "version": "1.0.0",
+    "source": ["PyPi", "GitHub"],
+    "minimum_supported_python_version": "3.10",
+    "project_short_description": "Python package for doing science.",
+    "project_full_description": "This is a Python package for doing science.",
+    "recipe_maintainers": "sbillinge,",
+    "runtime_requirements": "numpy,",
+    "testing_requirements": "pytest,",
+    "test_these_imports": "{{ cookiecutter.repo_name }},",
+    "_copy_without_render": [
+        "*.html",
+        "*.js",
+        ".github/*"
+    ]
+}

@@ -1,0 +1,50 @@
+{{ "{%- set name =" | safe }} "{{ cookiecutter.module_name }}" {{ "-%}" | safe }}
+{{ "{%- set version =" | safe }} "{{ cookiecutter.version }}" {{ "-%}" | safe }}
+{{ "{%- set sha256 = \"GENERATE_SHA\" -%}" | safe }}
+
+package:
+  name: {{ "{{ name|lower }}" | safe }}
+  version: {{ "{{ version }}" | safe }}
+
+source:
+  url: GENERATE_SOURCE
+  sha256: {{ "{{ sha256 }}" | safe }}
+
+build:
+  preserve_egg_dir: true
+  noarch: python
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed .
+
+requirements:
+  host:
+    - python >={{ cookiecutter.minimum_supported_python_version }}
+    - setuptools
+    - pip
+
+  run:
+    - python >={{ cookiecutter.minimum_supported_python_version }}
+    - setuptools
+    - GENERATE_RUN_REQUIREMENTS
+
+test:
+  imports:
+    - GENERATE_IMPORTS
+
+  requires:
+    - GENERATE_TEST_REQUIREMENTS
+
+about:
+  home: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/
+  summary: {{ cookiecutter.project_short_description }}
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.rst
+  description: |
+    {{ cookiecutter.project_full_description }}
+  doc_url: http://{{ cookiecutter.github_org }}.github.io/{{ cookiecutter.repo_name }}/
+  dev_url: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name}}/
+
+extra:
+  recipe-maintainers:
+    - GENERATE_MAINTAINERS
