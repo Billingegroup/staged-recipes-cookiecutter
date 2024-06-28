@@ -19,7 +19,7 @@ if "{{ cookiecutter.source }}" == "GitHub":
 tar_gz_dist = requests.get(source_url)
 sha256_hash = sha256(tar_gz_dist.content).hexdigest()
 
-if sha256_hash.strip() == "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855":
+if sha256_hash.strip() == "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" or sha256_hash.strip() == "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5":
     warnings.warn("SHA256 Hash Returned Emtpy File Hash, make sure your .tar.gz is uploaded to {{ cookiecutter.source }}!")
 
 # Read the main.yml file line by line
