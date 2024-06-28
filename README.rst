@@ -1,4 +1,6 @@
-# staged-recipes-cookiecutter
+staged-recipes-cookiecutter
+###########################
+
 Cookiecutter for making conda-forge recipes.
 
 Run with `cookiecutter https://github.com/billingegroup/staged-recipes-cookiecutter`.
