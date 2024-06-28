@@ -2,6 +2,7 @@ from hashlib import sha256
 from pathlib import Path
 
 import requests
+import warnings
 
 # Generate the SHA256 hash from the distribution source
 source_url = ""
@@ -17,6 +18,9 @@ if "{{ cookiecutter.source }}" == "GitHub":
     source_yaml = "https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/archive/" + "{{ "{{ version }}" | safe }}" + ".tar.gz"
 tar_gz_dist = requests.get(source_url)
 sha256_hash = sha256(tar_gz_dist.content).hexdigest()
+
+if sha256_hash.strip() = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855":
+    warnings.warn("SHA256 Hash Returned Emtpy File Hash, make sure your .tar.gz is uploaded to {{ cookiecutter.source }}!")
 
 # Read the main.yml file line by line
 meta_yml_path = Path.cwd() / "meta.yaml"
