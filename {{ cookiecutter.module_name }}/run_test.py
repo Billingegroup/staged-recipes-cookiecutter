@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
-import pytest
-import sys
 import importlib
+import sys
 from pathlib import Path
+
+import pytest
 
 if __name__ == "__main__":
     package_directory = '{{ cookiecutter.module_name }}'
