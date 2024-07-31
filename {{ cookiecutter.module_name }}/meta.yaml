@@ -17,12 +17,12 @@ build:
 
 requirements:
   host:
-    - python >={{ cookiecutter.minimum_supported_python_version }}
+    - python
     - setuptools
     - pip
 
   run:
-    - python >={{ cookiecutter.minimum_supported_python_version }}
+    - python
     - setuptools
     - GENERATE_RUN_REQUIREMENTS
 
