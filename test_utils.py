@@ -45,7 +45,7 @@ p.expect("runtime_requirements .*")
 p.sendline("python >=3.10, setuptools, numpy >= 1.3,")
 
 p.expect("testing_requirements .*")
-p.sendline("pytest, freezegun,")
+p.sendline("pytest, pytest-mock, freezegun,")
 
 p.expect("test_these_imports .*")
 p.sendline("diffpy, diffpy.utils, diffpy.utils.parsers, diffpy.utils.tests")
