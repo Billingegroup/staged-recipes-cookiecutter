@@ -16,14 +16,13 @@ build:
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
+  build:
+    - GENERATE_BUILD_REQUIREMENTS
+
   host:
-    - python
-    - setuptools
-    - pip
+    - GENERATE_HOST_REQUIREMENTS
 
   run:
-    - python
-    - setuptools
     - GENERATE_RUN_REQUIREMENTS
 
 test:
@@ -38,7 +37,7 @@ about:
   summary: {{ cookiecutter.project_short_description }}
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE.rst
+  license_file: {{ cookiecutter.license_file }}
   description: |
     {{ cookiecutter.project_full_description }}
   doc_url: http://{{ cookiecutter.github_org }}.github.io/{{ cookiecutter.repo_name }}/

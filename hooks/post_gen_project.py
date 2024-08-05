@@ -53,6 +53,12 @@ with open(meta_yml_path, 'r') as mfile:
             file_txt = file_txt.replace(f"{replace_string}", csv_str)
         return file_txt
 
+    # Add the build requirements
+    mfile_txt = add_list("{{ cookiecutter.build_requirements }}", "GENERATE_BUILD_REQUIREMENTS", mfile_txt)
+
+    # Add the host requirements
+    mfile_txt = add_list("{{ cookiecutter.host_requirements }}", "GENERATE_HOST_REQUIREMENTS", mfile_txt)
+
     # Add the runtime requirements
     mfile_txt = add_list("{{ cookiecutter.runtime_requirements }}", "GENERATE_RUN_REQUIREMENTS", mfile_txt)
 
