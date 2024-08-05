@@ -23,20 +23,26 @@ p.sendline("3.4.0")
 p.expect("Select source.*")
 p.sendline("1")
 
-p.expect("minimum_supported_python_version .*")
-p.sendline("3.10")
-
 p.expect("project_short_description .*")
 p.sendline("Shared utilities for diffpy packages.")
 
 p.expect("project_full_description .*")
 p.sendline("The diffpy.utils package provides functions for extracting array data from variously formatted text files and wx GUI utilities used by the PDFgui program. The package also includes an interpolation function based on the Whittaker-Shannon formula that can be used to resample a PDF or other profile function over a new grid.")
 
+p.expect("license_file .*")
+p.sendline("LICENSE.txt")
+
 p.expect("recipe_maintainers .*")
 p.sendline("sbillinge, Sparks29032, dragonyanglong, CJ-Wright, pavoljuhas")
 
+p.expect("build_requirements .*")
+p.sendline("")
+
+p.expect("host_requirements .*")
+p.sendline("python >=3.10, setuptools, pip,")
+
 p.expect("runtime_requirements .*")
-p.sendline("numpy >= 1.3,")
+p.sendline("python >=3.10, setuptools, numpy >= 1.3,")
 
 p.expect("testing_requirements .*")
 p.sendline("pytest, freezegun,")
