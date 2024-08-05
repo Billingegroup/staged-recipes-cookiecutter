@@ -12,7 +12,7 @@
     "host_requirements": "python >=3.10, setuptools, pip,",
     "runtime_requirements": "python >=3.10, setuptools, numpy,",
     "testing_requirements": "pytest,",
-    "test_these_imports": "{{ cookiecutter.repo_name }},",
+    "test_package_imports": "{{ cookiecutter.repo_name }},",
     "_copy_without_render": [
         "*.html",
         "*.js",
