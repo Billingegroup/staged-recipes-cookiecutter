@@ -27,7 +27,13 @@ p.expect("project_short_description .*")
 p.sendline("Shared utilities for diffpy packages.")
 
 p.expect("project_full_description .*")
-p.sendline("The diffpy.utils package provides functions for extracting array data from variously formatted text files and wx GUI utilities used by the PDFgui program. The package also includes an interpolation function based on the Whittaker-Shannon formula that can be used to resample a PDF or other profile function over a new grid.")
+p.sendline(
+    "The diffpy.utils package provides functions for extracting array data "
+    "from variously formatted text files and wx GUI utilities used by the "
+    "PDFgui program. The package also includes an interpolation function "
+    "based on the Whittaker-Shannon formula that can be used to resample "
+    "a PDF or other profile function over a new grid."
+)
 
 p.expect("license_file .*")
 p.sendline("LICENSE.txt")
