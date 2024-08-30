@@ -10,7 +10,6 @@ source:
   sha256: {{ "GENERATE_SHA" | safe }}
 
 build:
-  preserve_egg_dir: true
   noarch: python
   number: 0
   script: python -m pip install --no-deps --ignore-installed .
