@@ -1,6 +1,5 @@
 {{ "{%- set name =" | safe }} "{{ cookiecutter.module_name }}" {{ "-%}" | safe }}
 {{ "{%- set version =" | safe }} "{{ cookiecutter.version }}" {{ "-%}" | safe }}
-{{ "{%- set sha256 = \"GENERATE_SHA\" -%}" | safe }}
 
 package:
   name: {{ "{{ name|lower }}" | safe }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: GENERATE_SOURCE
-  sha256: {{ "{{ sha256 }}" | safe }}
+  sha256: {{ "GENERATE_SHA" | safe }}
 
 build:
   preserve_egg_dir: true
