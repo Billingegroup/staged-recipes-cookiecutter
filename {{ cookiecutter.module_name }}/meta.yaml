@@ -26,11 +26,16 @@ requirements:
     - GENERATE_RUN_REQUIREMENTS
 
 test:
-  imports:
-    - GENERATE_IMPORTS
-
   requires:
     - GENERATE_TEST_REQUIREMENTS
+  
+  source_files:
+    - tests
+
+  commands:
+    - pip check
+    - pip list
+    - pytest
 
 about:
   home: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/
