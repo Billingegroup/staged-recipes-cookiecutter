@@ -28,7 +28,7 @@ requirements:
 test:
   requires:
     - GENERATE_TEST_REQUIREMENTS
-  
+
   source_files:
     - tests
 

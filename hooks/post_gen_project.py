@@ -64,7 +64,7 @@ with open(meta_yml_path, 'r') as mfile:
 
     # Add the testing requirements
     mfile_txt = add_list("{{ cookiecutter.testing_requirements }}", "GENERATE_TEST_REQUIREMENTS", mfile_txt)
-    
+
     # Add the maintainers
     mfile_txt = add_list("{{ cookiecutter.recipe_maintainers }}", "GENERATE_MAINTAINERS", mfile_txt)
 
