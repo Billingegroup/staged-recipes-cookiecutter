@@ -9,10 +9,9 @@
     "license_file": "LICENSE.rst",
     "recipe_maintainers": "sbillinge,",
     "build_requirements": "",
-    "host_requirements": "python >=3.10, setuptools, pip,",
-    "runtime_requirements": "python >=3.10, setuptools, numpy,",
-    "testing_requirements": "pytest,",
-    "test_package_imports": "{{ cookiecutter.repo_name }},",
+    "host_requirements": "python >=3.10, setuptools, setuptools-git-versioning >=2.0, pip,",
+    "runtime_requirements": "python >=3.10, numpy,",
+    "testing_requirements": "pip, pytest,",
     "_copy_without_render": [
         "*.html",
         "*.js",
