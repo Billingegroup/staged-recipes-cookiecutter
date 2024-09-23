@@ -62,9 +62,6 @@ with open(meta_yml_path, 'r') as mfile:
     # Add the runtime requirements
     mfile_txt = add_list("{{ cookiecutter.runtime_requirements }}", "GENERATE_RUN_REQUIREMENTS", mfile_txt)
 
-    # Add the imports to test
-    mfile_txt = add_list("{{ cookiecutter.test_package_imports }}", "GENERATE_IMPORTS", mfile_txt)
-
     # Add the testing requirements
     mfile_txt = add_list("{{ cookiecutter.testing_requirements }}", "GENERATE_TEST_REQUIREMENTS", mfile_txt)
 
