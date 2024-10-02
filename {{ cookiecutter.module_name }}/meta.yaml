@@ -23,6 +23,7 @@ requirements:
     - GENERATE_HOST_REQUIREMENTS
 
   run:
+    # REMOVE THIS LINE - Replace matplotlib with matplotlib-base as recommended by the linter.
     - GENERATE_RUN_REQUIREMENTS
 
 test:
