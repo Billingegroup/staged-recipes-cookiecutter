@@ -1,5 +1,5 @@
-{{ "{%- set name =" | safe }} "{{ cookiecutter.module_name }}" {{ "-%}" | safe }}
-{{ "{%- set version =" | safe }} "{{ cookiecutter.version }}" {{ "-%}" | safe }}
+{{ "{% set name =" | safe }} "{{ cookiecutter.module_name }}" {{ "%}" | safe }}
+{{ "{% set version =" | safe }} "{{ cookiecutter.version }}" {{ "%}" | safe }}
 
 package:
   name: {{ "{{ name|lower }}" | safe }}
@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ "{{ PYTHON }}" }} -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
