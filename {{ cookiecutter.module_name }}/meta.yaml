@@ -1,5 +1,6 @@
 {{ "{% set name =" | safe }} "{{ cookiecutter.module_name }}" {{ "%}" | safe }}
 {{ "{% set version =" | safe }} "{{ cookiecutter.version }}" {{ "%}" | safe }}
+{{ "{% set python_min =" | safe }} "{{ cookiecutter.min_python_version }}" {{ "%}" | safe }}
 
 package:
   name: {{ "{{ name|lower }}" | safe }}
@@ -19,13 +20,16 @@ requirements:
     - GENERATE_BUILD_REQUIREMENTS
 
   host:
+    - python {{ "{{ python_min }}" }}
     - GENERATE_HOST_REQUIREMENTS
 
   run:
+    - python >={{ "{{ python_min }}" }}
     - GENERATE_RUN_REQUIREMENTS
 
 test:
   requires:
+    - python {{ "{{ python_min }}" }}
     - GENERATE_TEST_REQUIREMENTS
 
   source_files:
@@ -33,7 +37,6 @@ test:
 
   commands:
     - pip check
-    - pip list
     - pytest
 
 about:

@@ -11,8 +11,8 @@ pep_name = "{{ cookiecutter.module_name }}".replace(".", "_").replace("-", "_").
 while "__" in pep_name:
     pep_name = pep_name.replace("__", "_")
 if "{{ cookiecutter.source }}" == "PyPi":
-    source_url = f"https://pypi.io/packages/source/{pep_name[0]}/{pep_name}/{pep_name}-{{ cookiecutter.version }}.tar.gz"
-    source_yaml = f"https://pypi.io/packages/source/{pep_name[0]}/{pep_name}/{pep_name}-" + "{{ "{{ version }}" | safe }}" + ".tar.gz"
+    source_url = f"https://pypi.org/packages/source/{pep_name[0]}/{pep_name}/{pep_name}-{{ cookiecutter.version }}.tar.gz"
+    source_yaml = f"https://pypi.org/packages/source/{pep_name[0]}/{pep_name}/{pep_name}-" + "{{ "{{ version }}" | safe }}" + ".tar.gz"
 if "{{ cookiecutter.source }}" == "GitHub":
     source_url = "https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/archive/{{ cookiecutter.version }}.tar.gz"
     source_yaml = "https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/archive/" + "{{ "{{ version }}" | safe }}" + ".tar.gz"
